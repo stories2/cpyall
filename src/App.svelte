@@ -3,6 +3,32 @@
   // import Counter from './lib/Counter.svelte'
   import Router from 'svelte-spa-router'
   import { routes } from './routes';
+  import { onMount } from 'svelte';
+  import { getAuth, signInAnonymously, onAuthStateChanged } from "firebase/auth";
+  import { app } from './firebase';
+
+  onMount(async () => {
+    const auth = getAuth(app);
+    try {
+      const signIn = await signInAnonymously(auth);
+      console.log('signin', signIn);
+    } catch (err) {
+      console.error('err', err);
+    }
+    onAuthStateChanged(auth, (user) => {
+    if (user) {
+      // User is signed in, see docs for a list of available properties
+      // https://firebase.google.com/docs/reference/js/firebase.User
+      const uid = user.uid;
+      // ...
+      console.log('user', user)
+    } else {
+      // User is signed out
+      // ...
+      console.log('signed out')
+    }
+  });
+  })
 </script>
 
 <main>
