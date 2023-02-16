@@ -1,10 +1,13 @@
 <script>
-  import svelteLogo from './assets/svelte.svg'
-  import Counter from './lib/Counter.svelte'
+  // import svelteLogo from './assets/svelte.svg'
+  // import Counter from './lib/Counter.svelte'
+  import Router from 'svelte-spa-router'
+  import { routes } from './routes';
 </script>
 
 <main>
-  <div>
+  <Router {routes}/>
+  <!-- <div>
     <a href="https://vitejs.dev" target="_blank" rel="noreferrer"> 
       <img src="/vite.svg" class="logo" alt="Vite Logo" />
     </a>
@@ -24,11 +27,11 @@
 
   <p class="read-the-docs">
     Click on the Vite and Svelte logos to learn more
-  </p>
+  </p> -->
 </main>
 
 <style>
-  .logo {
+  /* .logo {
     height: 6em;
     padding: 1.5em;
     will-change: filter;
@@ -42,5 +45,5 @@
   }
   .read-the-docs {
     color: #888;
-  }
+  } */
 </style>
