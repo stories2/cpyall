@@ -1,3 +1,7 @@
+<script>
+    // fetch('https://api.ipify.org?format=json').then(res => res.json()).then(data => console.log(data))
+</script>
+
 <h1>Paste</h1>
 <div class="container">
     <div class="row justify-content-center">
